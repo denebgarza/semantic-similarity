@@ -1,0 +1,27 @@
+{
+  "settings": {
+    "index.knn": true
+  },
+  "mappings": {
+    "dynamic": "true",
+    "_source": {
+      "enabled": "true"
+    },
+    "properties": {
+      "t": {
+        "type": "text"
+      },
+      "s": {
+        "type": "long"
+      },
+      "e": {
+        "type": "knn_vector",
+        "dimension":512,
+        "method": {
+          "name": "hnsw",
+          "space_type": "cosinesimil"
+        }
+      }
+    }
+  }
+}
